@@ -39,7 +39,7 @@ const ALDINI_CONFIG = {
   name: "Aldini (Abdelhafid)",
   birthYear: 1988,
   age: 38, // 38 ans
-  whatsappNumber: "213557758057",       // Format international WhatsApp (+213 557 75 80 57)
+  whatsappNumber: "213676080176",       // Format international WhatsApp (+213 676 08 01 76)
   instagramUsername: "baccouche_abdelhafid", // Pseudo Instagram officiel
 };
 ```
