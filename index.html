@@ -1,0 +1,1622 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Aldini v2.4 — Édition Officielle Keynote</title>
+  
+  <!-- Meta Previews & SEO -->
+  <meta property="og:title" content="Aldini v2.4 — Présentation Officielle Keynote">
+  <meta property="og:description" content="Millésime 1988 (38 ans). Autonomie de sieste 12h, zéro ghosting certifié, latence SMS < 90s. Passez le test officiel.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="aldini photos/aldini_1.jpg">
+  <meta property="og:image:alt" content="Portrait officiel d'Aldini v2.4">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#05070c">
+
+  <!-- Favicon SVG Dynamique Keynote -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2305070c'/%3E%3Crect x='4' y='4' width='92' height='92' rx='20' fill='none' stroke='url(%23g)' stroke-width='4'/%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23d946ef'/%3E%3Cstop offset='100%25' stop-color='%2306b6d4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ctext x='50' y='68' font-family='sans-serif' font-weight='900' font-size='52' text-anchor='middle' fill='%23ffffff'%3EA%3C/text%3E%3C/svg%3E">
+
+  <!-- Google Fonts: Space Grotesk (Keynote Display), Plus Jakarta Sans (Body), JetBrains Mono (Data/Code) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN v3 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Space Grotesk"', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            darkOled: '#05070c',
+            darkSurface: '#0b0f19',
+            darkCard: '#111726',
+            darkCardHover: '#161f33',
+            darkBorder: '#1f293d',
+            darkBorderLight: 'rgba(255, 255, 255, 0.12)',
+            fuchsiaNeon: '#d946ef',
+            cyanNeon: '#06b6d4',
+            emeraldNeon: '#10b981',
+            roseNeon: '#f43f5e',
+            amberNeon: '#f59e0b',
+          },
+          boxShadow: {
+            'glow-fuchsia': '0 0 35px -5px rgba(217, 70, 239, 0.35)',
+            'glow-cyan': '0 0 35px -5px rgba(6, 182, 212, 0.35)',
+            'glow-emerald': '0 0 30px -5px rgba(16, 185, 129, 0.35)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Base Reset & Styling */
+    html {
+      color-scheme: dark;
+    }
+    body {
+      background-color: #05070c;
+      color: #f1f5f9;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Ambient Glow Background Gradients */
+    .glow-radial-fuchsia {
+      background: radial-gradient(circle, rgba(217, 70, 239, 0.14) 0%, rgba(5, 7, 12, 0) 70%);
+    }
+    .glow-radial-cyan {
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.12) 0%, rgba(5, 7, 12, 0) 70%);
+    }
+
+    /* Glassmorphism Surface */
+    .glass-card {
+      background: rgba(17, 23, 38, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card:hover {
+      border-color: rgba(217, 70, 239, 0.35);
+    }
+
+    .glass-card-cyan:hover {
+      border-color: rgba(6, 182, 212, 0.4);
+    }
+
+    /* Navigation Blur */
+    .nav-blur {
+      background: rgba(5, 7, 12, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    /* Floating Heart Animation */
+    @keyframes floatHeart {
+      0% {
+        transform: translateY(0) scale(0.8);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-80px) scale(1.4);
+        opacity: 0;
+      }
+    }
+    .animate-float-heart {
+      animation: floatHeart 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Keynote Gradient Text */
+    .gradient-keynote {
+      background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gradient-neon {
+      background: linear-gradient(135deg, #d946ef 0%, #ec4899 50%, #06b6d4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Smooth transition presets */
+    .transition-spring {
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Confetti Canvas overlay */
+    #confettiCanvas {
+      pointer-events: none;
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 100;
+    }
+  </style>
+</head>
+<body class="selection:bg-fuchsia-500 selection:text-white relative">
+
+  <!-- ================= CANVAS CONFETTI ================= -->
+  <canvas id="confettiCanvas"></canvas>
+
+  <!-- ================= AMBIENT BACKGROUND GLOWS ================= -->
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] glow-radial-fuchsia pointer-events-none z-0"></div>
+  <div class="fixed top-[40%] -right-40 w-[600px] h-[600px] glow-radial-cyan pointer-events-none z-0"></div>
+  <div class="fixed bottom-0 -left-40 w-[600px] h-[600px] glow-radial-fuchsia pointer-events-none z-0 opacity-50"></div>
+
+  <!-- ================= TOP TÉLÉMÉTRIE & STATUT BAR ================= -->
+  <aside aria-label="Statut du système" class="relative z-50 w-full bg-darkOled/90 border-b border-darkBorder py-2 px-4 text-xs font-mono tracking-wider">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      
+      <!-- Live Indicator -->
+      <div class="flex items-center gap-2">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emeraldNeon opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-emeraldNeon"></span>
+        </span>
+        <span class="text-slate-200 font-semibold">STATUT : EN STOCK</span>
+        <span class="text-slate-600 hidden sm:inline">|</span>
+        <span class="text-slate-400 hidden sm:inline">1 exemplaire unique disponible · Millésime 1988 (38 ans)</span>
+      </div>
+
+      <!-- Controls: Audio Toggle & Telemetry -->
+      <div class="flex items-center gap-4 text-slate-400">
+        <button id="soundToggleBtn" onclick="toggleAudio()" class="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-slate-900 border border-slate-700 hover:border-slate-500 text-slate-300 transition-spring hover:text-white focus-visible:ring-2 focus-visible:ring-fuchsia-500 focus-visible:outline-none" title="Activer / Couper les effets sonores">
+          <span id="soundIcon">🔊</span>
+          <span id="soundLabel" class="text-[11px]">Son : Activé</span>
+        </button>
+        <span class="text-fuchsiaNeon hidden md:inline font-bold">LATENCE &lt; 90s</span>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- ================= NAVIGATION KEYNOTE ================= -->
+  <header class="sticky top-0 z-40 nav-blur border-b border-darkBorder">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#galerie" class="flex items-center gap-2.5 group focus-visible:ring-2 focus-visible:ring-fuchsia-500 focus-visible:outline-none rounded-lg p-1" onclick="playClickSound()">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-fuchsiaNeon to-cyanNeon p-[1px] shadow-sm">
+          <div class="w-full h-full bg-darkOled rounded-[7px] flex items-center justify-center font-display font-black text-sm text-white">
+            A
+          </div>
+        </div>
+        <div class="flex items-baseline gap-1.5">
+          <span class="font-display font-extrabold text-xl tracking-tight text-white group-hover:text-fuchsia-300 transition-colors">ALDINI</span>
+          <span class="text-[11px] font-mono font-bold px-1.5 py-0.5 rounded bg-fuchsia-950/80 border border-fuchsia-500/40 text-fuchsia-300">v2.4</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8 text-xs font-mono uppercase tracking-wider text-slate-400">
+        <a href="#galerie" class="hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-fuchsia-500 focus-visible:outline-none rounded" onclick="playClickSound()">Les Looks</a>
+        <a href="#specs" class="hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-fuchsia-500 focus-visible:outline-none rounded" onclick="playClickSound()">Fiche Technique</a>
+        <a href="#comparatif" class="hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-fuchsia-500 focus-visible:outline-none rounded" onclick="playClickSound()">VS Tinder</a>
+        <a href="#avis" class="hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-fuchsia-500 focus-visible:outline-none rounded" onclick="playClickSound()">Avis Proches</a>
+        <a href="#quiz" class="hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-fuchsia-500 focus-visible:outline-none rounded" onclick="playClickSound()">Test d'Affinité</a>
+      </nav>
+
+      <!-- Right CTA Header -->
+      <div class="flex items-center gap-3">
+        <a href="#quiz" onclick="playClickSound()" class="relative inline-flex items-center justify-center p-0.5 overflow-hidden rounded-xl font-medium group transition-spring shadow-glow-fuchsia focus-visible:ring-2 focus-visible:ring-fuchsia-500 focus-visible:outline-none">
+          <span class="w-full h-full bg-gradient-to-br from-fuchsiaNeon to-pink-600 group-hover:from-pink-600 group-hover:to-cyanNeon absolute"></span>
+          <span class="relative px-3.5 py-1.5 transition-all ease-in duration-150 bg-darkOled rounded-[10px] group-hover:bg-opacity-0 text-xs font-mono uppercase tracking-wider text-white font-semibold flex items-center gap-1.5">
+            <span>Passer le test</span>
+            <svg class="w-3.5 h-3.5 text-fuchsia-300 group-hover:text-white group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ================= HERO KEYNOTE SECTION (US-1) ================= -->
+  <section class="relative pt-12 pb-16 sm:pt-20 sm:pb-24 px-4 sm:px-6 max-w-6xl mx-auto z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+      
+      <!-- Left Column : Headline & Punchline -->
+      <div class="lg:col-span-7 space-y-6">
+        
+        <!-- Keynote Badge -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-xs font-mono text-slate-300 shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-fuchsiaNeon animate-pulse"></span>
+          <span class="text-fuchsia-300 font-bold uppercase tracking-wider">ÉVÉNEMENT KEYNOTE 2026</span>
+          <span class="text-slate-600">·</span>
+          <span>Millésime 1988 (38 ans certifiés)</span>
+        </div>
+
+        <!-- Big Keynote Title -->
+        <h1 class="font-display text-4xl sm:text-6xl lg:text-6xl font-extrabold tracking-tight leading-[1.08] text-white">
+          Le célibat n'est plus une fatalité.<br>
+          <span class="gradient-neon">Voici Aldini v2.4.</span>
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-xl">
+          Marre des fantômes sur Tinder et des discussions qui s'arrêtent à <em>« tu fais quoi de beau »</em> ? 
+          Découvrez la version ultime : <strong>garantie zéro ghosting</strong>, <strong>autonomie de sieste 12h</strong>, <strong>38 ans de maturité sans drame</strong>, et écoute empathique de vos journées compliquées au travail.
+        </p>
+
+        <!-- Quick Telemetry Specs Badges -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 text-xs font-mono">
+          <div class="p-3 rounded-xl bg-darkCard border border-darkBorder flex flex-col justify-between">
+            <span class="text-slate-400">ÂGE CERTIFIÉ</span>
+            <span class="text-white text-base font-bold mt-1">38 ans (1988)</span>
+            <span class="text-[10px] text-emeraldNeon">Maturité optimale</span>
+          </div>
+          <div class="p-3 rounded-xl bg-darkCard border border-darkBorder flex flex-col justify-between">
+            <span class="text-slate-400">LATENCE SMS</span>
+            <span class="text-emeraldNeon text-base font-bold mt-1">&lt; 90 secondes</span>
+            <span class="text-[10px] text-slate-500">Même en match</span>
+          </div>
+          <div class="p-3 rounded-xl bg-darkCard border border-darkBorder flex flex-col justify-between">
+            <span class="text-slate-400">SIESTE MAX</span>
+            <span class="text-cyanNeon text-base font-bold mt-1">12h continue</span>
+            <span class="text-[10px] text-slate-500">Record dimanche</span>
+          </div>
+          <div class="p-3 rounded-xl bg-darkCard border border-darkBorder flex flex-col justify-between">
+            <span class="text-slate-400">LOYAUTÉ</span>
+            <span class="text-fuchsiaNeon text-base font-bold mt-1">100.0% [MAX]</span>
+            <span class="text-[10px] text-slate-500">Certifiée daronne</span>
+          </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
+          <a href="#quiz" onclick="playClickSound()" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-fuchsiaNeon via-pink-600 to-cyanNeon text-white font-bold text-sm tracking-wide shadow-glow-fuchsia hover:opacity-95 transition-spring text-center flex items-center justify-center gap-2">
+            <span>Vérifier mon affinité (1 min)</span>
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <a href="#comparatif" onclick="playClickSound()" class="px-5 py-3.5 rounded-xl bg-darkCard hover:bg-darkCardHover border border-darkBorder text-slate-300 hover:text-white font-mono text-xs uppercase tracking-wider transition-spring text-center flex items-center justify-center gap-2">
+            <span>Comparer face à Tinder</span>
+            <svg class="w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Right Column : Interactive Photo Showcase (Sélecteur Apple Configurator) -->
+      <div id="galerie" class="lg:col-span-5 w-full">
+        <div class="relative glass-card rounded-3xl p-4 sm:p-5 border border-darkBorder shadow-2xl shadow-fuchsia-950/40">
+          
+          <!-- Top Tag & Finition Selector Indicator -->
+          <div class="flex items-center justify-between pb-3 px-1 border-b border-darkBorder text-xs font-mono">
+            <div class="flex items-center gap-2">
+              <span id="activeBadgeLook" class="px-2 py-0.5 rounded-full bg-fuchsia-950/80 border border-fuchsia-500/40 text-fuchsia-300 font-bold">
+                Look 01 · Signature
+              </span>
+            </div>
+            <div class="flex items-center gap-2 text-slate-400">
+              <span class="inline-block w-2 h-2 rounded-full bg-emeraldNeon"></span>
+              <span class="text-slate-300">Résolution 4K</span>
+            </div>
+          </div>
+
+          <!-- Main Image Display Container with interactive zoom -->
+          <div class="relative mt-3 w-full aspect-[3/4] rounded-2xl overflow-hidden bg-slate-950 border border-darkBorder flex items-center justify-center group cursor-pointer" onclick="openLightbox()">
+            
+            <!-- The Photo -->
+            <img id="mainHeroPhoto" 
+                 src="aldini photos/aldini_1.jpg" 
+                 onerror="this.onerror=null; this.src='aldini_1.jpg';"
+                 alt="Portrait officiel d'Aldini v2.4" 
+                 class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out">
+
+            <!-- Hover overlay indicator -->
+            <div class="absolute inset-0 bg-gradient-to-t from-darkOled/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-between p-4">
+              <span class="text-xs font-mono text-white flex items-center gap-1.5 bg-darkOled/80 px-3 py-1.5 rounded-lg border border-white/20">
+                <svg class="w-3.5 h-3.5 text-fuchsiaNeon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                </svg>
+                Cliquer pour agrandir
+              </span>
+              <span class="text-xs font-mono text-cyanNeon">100% Naturel</span>
+            </div>
+
+            <!-- Floating Hearts Container -->
+            <div id="heartParticles" class="absolute inset-0 pointer-events-none overflow-hidden"></div>
+
+            <!-- Floating Like Pill on top of photo -->
+            <button onclick="event.stopPropagation(); triggerLike();" class="absolute bottom-4 right-4 z-20 flex items-center gap-2 px-3 py-2 rounded-full bg-darkOled/90 hover:bg-darkOled border border-pink-500/40 shadow-lg text-xs font-mono text-white transition-spring active:scale-95 group/btn">
+              <span class="text-rose-500 group-hover/btn:scale-125 transition-transform">❤️</span>
+              <span id="likeCount" class="font-bold tabular-nums">1,482</span>
+              <span class="text-slate-400 text-[10px] hidden sm:inline">Likes</span>
+            </button>
+
+            <!-- Quality Stamp -->
+            <div class="absolute top-4 left-4 z-20 px-2.5 py-1 rounded-lg bg-darkOled/85 border border-white/10 text-[10px] font-mono text-slate-300">
+              ⚡ Certifié Sans Filtre IA
+            </div>
+
+          </div>
+
+          <!-- Finitions Selector (Style Apple Configurator: 3 Real Photos) -->
+          <div class="mt-4 pt-3 border-t border-darkBorder">
+            <div class="text-[11px] font-mono text-slate-400 mb-2 flex items-center justify-between">
+              <span>CHOISIR LA FINITION DU MODÈLE :</span>
+              <span id="activeLookTitle" class="text-fuchsia-300 font-bold">Édition Signature</span>
+            </div>
+
+            <!-- 3 Thumbnails Switcher -->
+            <div class="grid grid-cols-3 gap-2">
+              
+              <!-- Look 1 -->
+              <button onclick="selectPhotoLook(1)" id="lookBtn1" class="p-1.5 rounded-xl border-2 border-fuchsiaNeon bg-darkCard flex flex-col items-center gap-1.5 transition-spring text-left">
+                <div class="w-full aspect-square rounded-lg overflow-hidden bg-slate-900 border border-slate-700">
+                  <img src="aldini photos/aldini_1.jpg" onerror="this.onerror=null; this.src='aldini_1.jpg';" alt="Look 1" class="w-full h-full object-cover">
+                </div>
+                <div class="w-full px-1 text-[11px] font-mono leading-tight">
+                  <div class="font-bold text-white truncate">01. Hivernal</div>
+                  <div class="text-slate-400 text-[10px] truncate">Signature</div>
+                </div>
+              </button>
+
+              <!-- Look 2 -->
+              <button onclick="selectPhotoLook(2)" id="lookBtn2" class="p-1.5 rounded-xl border border-darkBorder hover:border-slate-500 bg-darkCard flex flex-col items-center gap-1.5 transition-spring text-left opacity-75 hover:opacity-100">
+                <div class="w-full aspect-square rounded-lg overflow-hidden bg-slate-900 border border-slate-700">
+                  <img src="aldini photos/aldini_2.jpg" onerror="this.onerror=null; this.src='aldini_2.jpg';" alt="Look 2" class="w-full h-full object-cover">
+                </div>
+                <div class="w-full px-1 text-[11px] font-mono leading-tight">
+                  <div class="font-bold text-white truncate">02. Lunettes</div>
+                  <div class="text-slate-400 text-[10px] truncate">Vision 2.0</div>
+                </div>
+              </button>
+
+              <!-- Look 3 -->
+              <button onclick="selectPhotoLook(3)" id="lookBtn3" class="p-1.5 rounded-xl border border-darkBorder hover:border-slate-500 bg-darkCard flex flex-col items-center gap-1.5 transition-spring text-left opacity-75 hover:opacity-100">
+                <div class="w-full aspect-square rounded-lg overflow-hidden bg-slate-900 border border-slate-700">
+                  <img src="aldini photos/aldini_3.jpg" onerror="this.onerror=null; this.src='aldini_3.jpg';" alt="Look 3" class="w-full h-full object-cover">
+                </div>
+                <div class="w-full px-1 text-[11px] font-mono leading-tight">
+                  <div class="font-bold text-white truncate">03. Casual</div>
+                  <div class="text-slate-400 text-[10px] truncate">Minimaliste</div>
+                </div>
+              </button>
+
+            </div>
+
+            <!-- Dynamic Specs of the chosen look -->
+            <div id="lookSpecsSnippet" class="mt-3 p-2.5 rounded-xl bg-slate-950/80 border border-darkBorder flex items-center justify-between text-xs font-mono text-slate-300">
+              <span class="text-cyanNeon">Charisme : 99.8%</span>
+              <span class="text-slate-500">·</span>
+              <span class="text-slate-300">Style : Spontané & Chaleureux</span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= KEYNOTE BENTO GRID : SPÉCIFICATIONS TECHNIQUES (US-2) ================= -->
+  <section id="specs" class="py-16 sm:py-24 px-4 sm:px-6 max-w-6xl mx-auto border-t border-darkBorder relative z-10">
+    
+    <!-- Section Header -->
+    <div class="max-w-2xl mb-12">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/70 border border-cyan-500/30 text-xs font-mono text-cyan-300 mb-3">
+        <span>ARCHITECTURE SYSTÈME HAUT DE GAMME</span>
+      </div>
+      <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+        Spécifications Techniques. <br>
+        <span class="gradient-neon">L'ingénierie du partenaire idéal.</span>
+      </h2>
+      <p class="text-slate-400 text-sm sm:text-base mt-3">
+        Chaque composant a été calibré avec précision pour éliminer les bugs des relations modernes.
+      </p>
+    </div>
+
+    <!-- Bento Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+      
+      <!-- Bento 1 : Puce Empathique M4 (Grand format 2 cols) -->
+      <div class="md:col-span-2 glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden group">
+        <div class="absolute -right-12 -bottom-12 w-48 h-48 bg-fuchsia-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-mono text-fuchsia-400 font-bold uppercase tracking-wider">MOTEUR NEURONAL AFFECTIF</span>
+            <span class="px-2 py-0.5 rounded bg-fuchsia-500/10 border border-fuchsia-500/30 text-fuchsia-300 text-[11px] font-mono">BIONIC M4</span>
+          </div>
+          <h3 class="font-display text-2xl sm:text-3xl font-bold text-white mb-2">
+            Filtre anti-drames & soutien inconditionnel.
+          </h3>
+          <p class="text-slate-300 text-sm leading-relaxed max-w-md">
+            Quand votre boss ou votre collègue vous énerve, Aldini v2.4 n'essaie pas d'être neutre. Il prend immédiatement votre parti avec des arguments convaincants et commande votre dessert préféré.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-darkBorder flex items-center justify-between text-xs font-mono">
+          <span class="text-slate-400">Taux de validation de vos coups de gueule</span>
+          <span class="text-emeraldNeon font-bold text-sm">100% [GARANTI]</span>
+        </div>
+      </div>
+
+      <!-- Bento 2 : Autonomie Sieste 12h -->
+      <div class="glass-card rounded-2xl p-6 flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-mono text-cyanNeon font-bold uppercase">BATTERIE</span>
+            <span class="text-lg">⚡</span>
+          </div>
+          <h3 class="font-display text-xl font-bold text-white mb-2">
+            Autonomie Sieste 12h
+          </h3>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            Capacité de veille prolongée sous la couette le dimanche sans culpabilité. Rechargement ultra-rapide avec un café.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-darkBorder">
+          <div class="w-full bg-slate-900 rounded-full h-2 overflow-hidden">
+            <div class="bg-gradient-to-r from-cyanNeon to-emeraldNeon h-full rounded-full" style="width: 95%"></div>
+          </div>
+          <div class="flex justify-between text-[11px] font-mono text-slate-400 mt-2">
+            <span>Dimanche matin</span>
+            <span class="text-cyanNeon font-bold">95% de sommeil</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bento 3 : Latence SMS < 90s -->
+      <div class="glass-card rounded-2xl p-6 flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-mono text-emeraldNeon font-bold uppercase">CONNECTIVITÉ</span>
+            <span class="text-lg">📡</span>
+          </div>
+          <h3 class="font-display text-xl font-bold text-white mb-2">
+            Zéro Ghosting Certifié
+          </h3>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            Latence moyenne de réponse aux messages inférieure à 90 secondes. Aucun double vu sans réponse n'a jamais été signalé.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-darkBorder flex items-center justify-between text-xs font-mono">
+          <span class="text-slate-400">Latence moyenne</span>
+          <span class="text-emeraldNeon font-bold">&lt; 1 min 20s</span>
+        </div>
+      </div>
+
+      <!-- Bento 4 : Moteur Culinaire -->
+      <div class="glass-card rounded-2xl p-6 flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-mono text-amberNeon font-bold uppercase">GASTRONOMIE</span>
+            <span class="text-lg">🍝</span>
+          </div>
+          <h3 class="font-display text-xl font-bold text-white mb-2">
+            Moteur Culinaire Turbo
+          </h3>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            Expertise démontrée en pâtes carbonara maison, maîtrise du barbecue estival, et géolocalisation des meilleurs kebabs artisanaux sans sauce piquante en trop.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-darkBorder flex items-center justify-between text-xs font-mono">
+          <span class="text-slate-400">Générosité des portions</span>
+          <span class="text-amberNeon font-bold">Format XL</span>
+        </div>
+      </div>
+
+      <!-- Bento 5 : Résistance Émotionnelle IP68 (Grand format 2 cols) -->
+      <div class="md:col-span-2 glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden group">
+        <div class="absolute -left-12 -bottom-12 w-48 h-48 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-mono text-cyanNeon font-bold uppercase">RÉSISTANCE MATÉRIELLE</span>
+            <span class="px-2 py-0.5 rounded bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-[11px] font-mono">NORME IP68</span>
+          </div>
+          <h3 class="font-display text-2xl sm:text-3xl font-bold text-white mb-2">
+            Résistant aux sautes d'humeur & séries dramatiques.
+          </h3>
+          <p class="text-slate-300 text-sm leading-relaxed max-w-md">
+            Testé en laboratoire contre les soirées où <em>« tout va mal sans raison »</em>. Capable de rester calme, d'apporter un chocolat chaud et de ne jamais prononcer la phrase interdite : <em>« mais calme-toi voyons »</em>.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-darkBorder flex items-center justify-between text-xs font-mono">
+          <span class="text-slate-400">Tolérance aux marathons Netflix</span>
+          <span class="text-cyanNeon font-bold text-sm">Illimitée</span>
+        </div>
+      </div>
+
+      <!-- Bento 6 : Capacité de Stockage Rumeurs -->
+      <div class="glass-card rounded-2xl p-6 flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-mono text-fuchsiaNeon font-bold uppercase">MÉMOIRE VIVE</span>
+            <span class="text-lg">🧠</span>
+          </div>
+          <h3 class="font-display text-xl font-bold text-white mb-2">
+            Mémoire Flash 2 To
+          </h3>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            Se souvient des prénoms de toutes vos collègues, de qui déteste qui, et du plat que vous n'aimez surtout pas manger.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-darkBorder flex items-center justify-between text-xs font-mono">
+          <span class="text-slate-400">Rétention des dates</span>
+          <span class="text-fuchsiaNeon font-bold">100% sans faille</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= COMPARATIF OFFICIEL : ALDINI VS PRÉTENDANT ORDINAIRE TINDER (US-3) ================= -->
+  <section id="comparatif" class="py-16 sm:py-24 px-4 sm:px-6 max-w-5xl mx-auto border-t border-darkBorder relative z-10">
+    
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-700 text-xs font-mono text-slate-300 mb-3">
+        <span>BENCHMARK COMPARATIF CONCURRENCE</span>
+      </div>
+      <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+        Pourquoi passer à Aldini v2.4 ?
+      </h2>
+      <p class="text-slate-400 text-sm sm:text-base mt-3">
+        Tableau de test comparatif sans concession face aux profils standards des applications de rencontre.
+      </p>
+    </div>
+
+    <!-- Comparative Table & Mobile Versus Cards -->
+    <div class="glass-card rounded-3xl border border-darkBorder overflow-hidden shadow-2xl">
+      
+      <!-- VUE DESKTOP (Tableau classique complet) -->
+      <div class="hidden md:block overflow-x-auto">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="border-b border-darkBorder bg-slate-900/80 text-xs font-mono uppercase tracking-wider text-slate-400">
+              <th scope="col" class="py-4 px-5 sm:px-6">Critères d'évaluation</th>
+              <th scope="col" class="py-4 px-5 sm:px-6 text-fuchsiaNeon font-bold bg-fuchsia-950/30 border-x border-fuchsia-500/20">
+                <div class="flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-fuchsiaNeon"></span>
+                  <span>Aldini v2.4 (38 ans)</span>
+                </div>
+              </th>
+              <th scope="col" class="py-4 px-5 sm:px-6 text-slate-400">Prétendant Standard Tinder</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-darkBorder font-sans text-xs sm:text-sm">
+            <tr class="hover:bg-slate-900/40 transition-colors">
+              <td class="py-4 px-5 sm:px-6 font-medium text-white">Réponse aux messages (SMS / WhatsApp)</td>
+              <td class="py-4 px-5 sm:px-6 font-mono font-semibold text-emeraldNeon bg-fuchsia-950/10 border-x border-fuchsia-500/10">⚡ &lt; 90 secondes (avec ponctuation soignée)</td>
+              <td class="py-4 px-5 sm:px-6 text-slate-400 font-mono">❌ 3 jours plus tard : <em>« dsl j'avais pas vu »</em></td>
+            </tr>
+            <tr class="hover:bg-slate-900/40 transition-colors">
+              <td class="py-4 px-5 sm:px-6 font-medium text-white">Conversation après le premier message</td>
+              <td class="py-4 px-5 sm:px-6 font-mono font-semibold text-emeraldNeon bg-fuchsia-950/10 border-x border-fuchsia-500/10">✨ Véritable répartie &amp; curiosité sincère</td>
+              <td class="py-4 px-5 sm:px-6 text-slate-400 font-mono">❌ <em>« Cv et toi ? »</em> répété 4 fois</td>
+            </tr>
+            <tr class="hover:bg-slate-900/40 transition-colors">
+              <td class="py-4 px-5 sm:px-6 font-medium text-white">Maturité &amp; Sérénité émotionnelle</td>
+              <td class="py-4 px-5 sm:px-6 font-mono font-semibold text-emeraldNeon bg-fuchsia-950/10 border-x border-fuchsia-500/10">🍷 Millésime 1988 (38 ans) : zéro prise de tête</td>
+              <td class="py-4 px-5 sm:px-6 text-slate-400 font-mono">❌ Syndrome de l'éternel indécis</td>
+            </tr>
+            <tr class="hover:bg-slate-900/40 transition-colors">
+              <td class="py-4 px-5 sm:px-6 font-medium text-white">Capacité culinaire réelle</td>
+              <td class="py-4 px-5 sm:px-6 font-mono font-semibold text-emeraldNeon bg-fuchsia-950/10 border-x border-fuchsia-500/10">🍝 Pâtes fraîches &amp; barbecue maîtrisé</td>
+              <td class="py-4 px-5 sm:px-6 text-slate-400 font-mono">❌ Faire cuire des coquillettes trop cuites</td>
+            </tr>
+            <tr class="hover:bg-slate-900/40 transition-colors">
+              <td class="py-4 px-5 sm:px-6 font-medium text-white">Intégrité photographique</td>
+              <td class="py-4 px-5 sm:px-6 font-mono font-semibold text-emeraldNeon bg-fuchsia-950/10 border-x border-fuchsia-500/10">📸 100% conforme à la réalité (3 photos HD)</td>
+              <td class="py-4 px-5 sm:px-6 text-slate-400 font-mono">❌ Photo de profil qui date du lycée en 2017</td>
+            </tr>
+            <tr class="hover:bg-slate-900/40 transition-colors">
+              <td class="py-4 px-5 sm:px-6 font-medium text-white">Réaction lors d'un drama de travail</td>
+              <td class="py-4 px-5 sm:px-6 font-mono font-semibold text-emeraldNeon bg-fuchsia-950/10 border-x border-fuchsia-500/10">🛡️ <em>« Elle abuse trop, viens on mange un burger »</em></td>
+              <td class="py-4 px-5 sm:px-6 text-slate-400 font-mono">❌ <em>« Faut relativiser c'est que du taf »</em></td>
+            </tr>
+            <tr class="hover:bg-slate-900/40 transition-colors">
+              <td class="py-4 px-5 sm:px-6 font-medium text-white">Fidélité &amp; Clarté des intentions</td>
+              <td class="py-4 px-5 sm:px-6 font-mono font-semibold text-emeraldNeon bg-fuchsia-950/10 border-x border-fuchsia-500/10">🔒 Cryptage SSL du cœur : 100% exclusif</td>
+              <td class="py-4 px-5 sm:px-6 text-slate-400 font-mono">❌ <em>« Je sais pas trop ce que je cherche »</em></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- VUE MOBILE (Cartes Versus empilées, 0 scroll horizontal, fluidité absolue) -->
+      <div class="md:hidden divide-y divide-darkBorder">
+        
+        <!-- Carte 1 -->
+        <div class="p-4 space-y-2">
+          <div class="text-xs font-mono font-bold text-white uppercase tracking-wider flex items-center justify-between">
+            <span>1. Réponse aux messages</span>
+            <span class="text-[10px] text-fuchsia-300">SMS / WhatsApp</span>
+          </div>
+          <div class="p-3 rounded-xl bg-emerald-950/20 border border-emerald-500/30 flex items-start gap-2.5">
+            <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-fuchsia-950 border border-fuchsia-500/40 text-fuchsia-300 shrink-0 mt-0.5">ALDINI</span>
+            <div class="text-xs font-mono text-emeraldNeon font-semibold">
+              ⚡ &lt; 90 secondes (avec ponctuation soignée)
+            </div>
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-900/60 border border-darkBorder flex items-start gap-2.5">
+            <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 shrink-0 mt-0.5">TINDER</span>
+            <div class="text-xs font-mono text-slate-400">
+              ❌ 3 jours plus tard : <em>« dsl j'avais pas vu »</em>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carte 2 -->
+        <div class="p-4 space-y-2">
+          <div class="text-xs font-mono font-bold text-white uppercase tracking-wider flex items-center justify-between">
+            <span>2. Conversation après le 1er message</span>
+          </div>
+          <div class="p-3 rounded-xl bg-emerald-950/20 border border-emerald-500/30 flex items-start gap-2.5">
+            <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-fuchsia-950 border border-fuchsia-500/40 text-fuchsia-300 shrink-0 mt-0.5">ALDINI</span>
+            <div class="text-xs font-mono text-emeraldNeon font-semibold">
+              ✨ Véritable répartie &amp; curiosité sincère
+            </div>
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-900/60 border border-darkBorder flex items-start gap-2.5">
+            <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 shrink-0 mt-0.5">TINDER</span>
+            <div class="text-xs font-mono text-slate-400">
+              ❌ <em>« Cv et toi ? »</em> répété 4 fois
+            </div>
+          </div>
+        </div>
+
+        <!-- Carte 3 -->
+        <div class="p-4 space-y-2">
+          <div class="text-xs font-mono font-bold text-white uppercase tracking-wider flex items-center justify-between">
+            <span>3. Maturité &amp; Sérénité</span>
+            <span class="text-[10px] text-cyanNeon">38 ans (1988)</span>
+          </div>
+          <div class="p-3 rounded-xl bg-emerald-950/20 border border-emerald-500/30 flex items-start gap-2.5">
+            <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-fuchsia-950 border border-fuchsia-500/40 text-fuchsia-300 shrink-0 mt-0.5">ALDINI</span>
+            <div class="text-xs font-mono text-emeraldNeon font-semibold">
+              🍷 Millésime 1988 (38 ans) : sait ce qu'il veut, zéro prise de tête
+            </div>
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-900/60 border border-darkBorder flex items-start gap-2.5">
+            <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 shrink-0 mt-0.5">TINDER</span>
+            <div class="text-xs font-mono text-slate-400">
+              ❌ Syndrome de Peter Pan et ghosting chronique
+            </div>
+          </div>
+        </div>
+
+        <!-- Carte 4 -->
+        <div class="p-4 space-y-2">
+          <div class="text-xs font-mono font-bold text-white uppercase tracking-wider flex items-center justify-between">
+            <span>4. Capacité culinaire réelle</span>
+          </div>
+          <div class="p-3 rounded-xl bg-emerald-950/20 border border-emerald-500/30 flex items-start gap-2.5">
+            <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-fuchsia-950 border border-fuchsia-500/40 text-fuchsia-300 shrink-0 mt-0.5">ALDINI</span>
+            <div class="text-xs font-mono text-emeraldNeon font-semibold">
+              🍝 Pâtes fraîches &amp; barbecue maîtrisé
+            </div>
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-900/60 border border-darkBorder flex items-start gap-2.5">
+            <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 shrink-0 mt-0.5">TINDER</span>
+            <div class="text-xs font-mono text-slate-400">
+              ❌ Faire cuire des coquillettes trop cuites
+            </div>
+          </div>
+        </div>
+
+        <!-- Carte 5 -->
+        <div class="p-4 space-y-2">
+          <div class="text-xs font-mono font-bold text-white uppercase tracking-wider flex items-center justify-between">
+            <span>5. Intégrité photographique</span>
+          </div>
+          <div class="p-3 rounded-xl bg-emerald-950/20 border border-emerald-500/30 flex items-start gap-2.5">
+            <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-fuchsia-950 border border-fuchsia-500/40 text-fuchsia-300 shrink-0 mt-0.5">ALDINI</span>
+            <div class="text-xs font-mono text-emeraldNeon font-semibold">
+              📸 100% conforme à la réalité (3 photos HD)
+            </div>
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-900/60 border border-darkBorder flex items-start gap-2.5">
+            <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 shrink-0 mt-0.5">TINDER</span>
+            <div class="text-xs font-mono text-slate-400">
+              ❌ Photo de profil qui date du lycée en 2017
+            </div>
+          </div>
+        </div>
+
+        <!-- Carte 6 -->
+        <div class="p-4 space-y-2">
+          <div class="text-xs font-mono font-bold text-white uppercase tracking-wider flex items-center justify-between">
+            <span>6. Réaction drama de travail</span>
+          </div>
+          <div class="p-3 rounded-xl bg-emerald-950/20 border border-emerald-500/30 flex items-start gap-2.5">
+            <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-fuchsia-950 border border-fuchsia-500/40 text-fuchsia-300 shrink-0 mt-0.5">ALDINI</span>
+            <div class="text-xs font-mono text-emeraldNeon font-semibold">
+              🛡️ <em>« Elle abuse trop, viens on mange un burger »</em>
+            </div>
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-900/60 border border-darkBorder flex items-start gap-2.5">
+            <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 shrink-0 mt-0.5">TINDER</span>
+            <div class="text-xs font-mono text-slate-400">
+              ❌ <em>« Faut relativiser c'est que du taf »</em>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carte 7 -->
+        <div class="p-4 space-y-2">
+          <div class="text-xs font-mono font-bold text-white uppercase tracking-wider flex items-center justify-between">
+            <span>7. Fidélité &amp; Clarté</span>
+          </div>
+          <div class="p-3 rounded-xl bg-emerald-950/20 border border-emerald-500/30 flex items-start gap-2.5">
+            <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-fuchsia-950 border border-fuchsia-500/40 text-fuchsia-300 shrink-0 mt-0.5">ALDINI</span>
+            <div class="text-xs font-mono text-emeraldNeon font-semibold">
+              🔒 Cryptage SSL du cœur : 100% exclusif
+            </div>
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-900/60 border border-darkBorder flex items-start gap-2.5">
+            <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 shrink-0 mt-0.5">TINDER</span>
+            <div class="text-xs font-mono text-slate-400">
+              ❌ <em>« Je sais pas trop ce que je cherche »</em>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Table Callout -->
+      <div class="p-4 sm:p-5 bg-darkCard/80 border-t border-darkBorder flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono">
+        <span class="text-slate-300">
+          Résultat de l'audit : <strong class="text-emeraldNeon">Aldini v2.4 surclasse la concurrence de +842%</strong>.
+        </span>
+        <a href="#quiz" onclick="playClickSound()" class="text-fuchsia-300 hover:text-white font-bold flex items-center gap-1 group">
+          <span>Tester mon profil maintenant</span>
+          <span class="group-hover:translate-x-1 transition-transform">→</span>
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= TÉMOIGNAGES & AVIS PROCHES DÉJANTÉS (US-4) ================= -->
+  <section id="avis" class="py-16 sm:py-24 px-4 sm:px-6 max-w-6xl mx-auto border-t border-darkBorder relative z-10">
+    
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-950/60 border border-amber-500/30 text-xs font-mono text-amber-300 mb-3">
+        <span>PREUVE SOCIALE & AUDIT ENTOURAGE</span>
+      </div>
+      <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+        Avis Clients Certifiés.
+      </h2>
+      <p class="text-slate-400 text-sm sm:text-base mt-3">
+        Ceux qui le côtoient au quotidien témoignent sous serment (et sans filtre).
+      </p>
+    </div>
+
+    <!-- Testimonials Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+      
+      <!-- Avis 1 : La Daronne -->
+      <div class="glass-card rounded-2xl p-6 flex flex-col justify-between group hover:border-amber-500/40 transition-spring">
+        <div>
+          <div class="flex items-center justify-between mb-3 text-amberNeon text-xs">
+            <span>⭐⭐⭐⭐⭐</span>
+            <span class="font-mono text-[10px] text-slate-500">Avis Vérifié</span>
+          </div>
+          <p class="text-xs text-slate-300 italic leading-relaxed mb-4">
+            « Très gentil garçon. Il range sa chambre au moins une fois par mois et il sait faire la vaisselle quand on lui demande trois fois. Prenez-le vite s'il vous plaît, je veux voir mes petits-enfants. »
+          </p>
+        </div>
+        <div class="pt-4 border-t border-darkBorder flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-amber-500/20 border border-amber-500/30 flex items-center justify-center font-display font-bold text-amber-300 text-xs">
+            M
+          </div>
+          <div>
+            <div class="text-xs font-bold text-white">Sa Daronne</div>
+            <div class="text-[10px] font-mono text-slate-400">Directrice Qualité Familiale</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Avis 2 : Le Meilleur Pote / Wingman -->
+      <div class="glass-card rounded-2xl p-6 flex flex-col justify-between group hover:border-cyan-500/40 transition-spring">
+        <div>
+          <div class="flex items-center justify-between mb-3 text-amberNeon text-xs">
+            <span>⭐⭐⭐⭐⭐</span>
+            <span class="font-mono text-[10px] text-slate-500">Avis Vérifié</span>
+          </div>
+          <p class="text-xs text-slate-300 italic leading-relaxed mb-4">
+            « Un gars en or. Il ne vole jamais la dernière frite dans l'assiette et il est toujours prêt à dépanner à 2h du matin. Son seul défaut : ne lui confiez jamais le contrôle de la playlist en voiture. »
+          </p>
+        </div>
+        <div class="pt-4 border-t border-darkBorder flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-cyan-500/20 border border-cyan-500/30 flex items-center justify-center font-display font-bold text-cyan-300 text-xs">
+            W
+          </div>
+          <div>
+            <div class="text-xs font-bold text-white">Karim, son Wingman</div>
+            <div class="text-[10px] font-mono text-slate-400">Ami certifié depuis 2012</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Avis 3 : Le Banquier -->
+      <div class="glass-card rounded-2xl p-6 flex flex-col justify-between group hover:border-emerald-500/40 transition-spring">
+        <div>
+          <div class="flex items-center justify-between mb-3 text-amberNeon text-xs">
+            <span>⭐⭐⭐⭐⭐</span>
+            <span class="font-mono text-[10px] text-slate-500">Avis Vérifié</span>
+          </div>
+          <p class="text-xs text-slate-300 italic leading-relaxed mb-4">
+            « Situation financière tout à fait saine tant qu'il ne découvre pas un nouveau concept de resto branché. Dépenses majeures : nourriture réconfortante et cadeaux pour ses proches. Recommandé. »
+          </p>
+        </div>
+        <div class="pt-4 border-t border-darkBorder flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center font-display font-bold text-emerald-300 text-xs">
+            B
+          </div>
+          <div>
+            <div class="text-xs font-bold text-white">Julien M.</div>
+            <div class="text-[10px] font-mono text-slate-400">Conseiller Bancaire</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Avis 4 : Le Patron du Kebab -->
+      <div class="glass-card rounded-2xl p-6 flex flex-col justify-between group hover:border-fuchsia-500/40 transition-spring">
+        <div>
+          <div class="flex items-center justify-between mb-3 text-amberNeon text-xs">
+            <span>⭐⭐⭐⭐⭐</span>
+            <span class="font-mono text-[10px] text-slate-500">Avis Vérifié</span>
+          </div>
+          <p class="text-xs text-slate-300 italic leading-relaxed mb-4">
+            « Client le plus fidèle depuis 5 ans. Toujours poli, toujours le sourire. S'il est aussi fidèle avec sa future copine qu'avec sa sauce blanche sans oignon, vous pouvez y aller les yeux fermés. »
+          </p>
+        </div>
+        <div class="pt-4 border-t border-darkBorder flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-fuchsia-500/20 border border-fuchsia-500/30 flex items-center justify-center font-display font-bold text-fuchsia-300 text-xs">
+            T
+          </div>
+          <div>
+            <div class="text-xs font-bold text-white">Chef Tarik</div>
+            <div class="text-[10px] font-mono text-slate-400">Restaurateur de quartier</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= LE TEST D'AFFINITÉ INTERACTIF (US-5, US-6) ================= -->
+  <section id="quiz" class="py-16 sm:py-24 px-4 sm:px-6 max-w-3xl mx-auto border-t border-darkBorder relative z-10">
+    
+    <div class="text-center mb-10">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-fuchsia-950/80 border border-fuchsia-500/40 text-xs font-mono text-fuchsia-300 mb-3">
+        <span>TEST OFFICIEL D'ÉLIGIBILITÉ</span>
+      </div>
+      <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+        Êtes-vous compatible avec Aldini ?
+      </h2>
+      <p class="text-slate-400 text-sm sm:text-base mt-2">
+        Répondez à 3 questions rapides pour calculer votre score d'affinité en direct.
+      </p>
+    </div>
+
+    <!-- Quiz Interactive Card Container -->
+    <div class="glass-card rounded-3xl p-6 sm:p-10 border border-darkBorder shadow-2xl relative overflow-hidden">
+      
+      <!-- Progress Bar -->
+      <div class="mb-8">
+        <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-2">
+          <span id="quizStepLabel">QUESTION 1 SUR 3</span>
+          <span id="quizStepPercent" class="text-fuchsiaNeon font-bold">33%</span>
+        </div>
+        <div class="w-full bg-slate-900 rounded-full h-2 overflow-hidden border border-slate-800">
+          <div id="quizProgressBar" class="bg-gradient-to-r from-fuchsiaNeon to-cyanNeon h-full rounded-full transition-all duration-300 ease-out" style="width: 33%"></div>
+        </div>
+      </div>
+
+      <!-- ================= STEP 1 ================= -->
+      <div id="step1" class="quiz-step space-y-6">
+        <div class="space-y-2">
+          <span class="text-xs font-mono text-cyanNeon font-bold">SCÉNARIO 01</span>
+          <h3 class="font-display text-xl sm:text-2xl font-bold text-white">
+            Vendredi soir, 20h30. Quel est votre programme parfait ?
+          </h3>
+        </div>
+
+        <div class="space-y-3">
+          <button onclick="handleAnswer(1, 1)" class="w-full p-4 rounded-xl bg-darkCard hover:bg-darkCardHover border border-darkBorder hover:border-fuchsia-500 text-left transition-spring group flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-xs font-mono text-slate-300 group-hover:border-fuchsia-400 group-hover:text-white shrink-0 mt-0.5">A</span>
+            <div>
+              <div class="text-sm font-semibold text-white group-hover:text-fuchsia-300">Plaid chaud, commande sushis/pizza et débat sur une série.</div>
+              <div class="text-xs text-slate-400 mt-0.5">Le combo relaxation ultime sans pression sociale.</div>
+            </div>
+          </button>
+
+          <button onclick="handleAnswer(1, 2)" class="w-full p-4 rounded-xl bg-darkCard hover:bg-darkCardHover border border-darkBorder hover:border-fuchsia-500 text-left transition-spring group flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-xs font-mono text-slate-300 group-hover:border-fuchsia-400 group-hover:text-white shrink-0 mt-0.5">B</span>
+            <div>
+              <div class="text-sm font-semibold text-white group-hover:text-fuchsia-300">Sortie resto sympa et impro totale pour la suite de la soirée.</div>
+              <div class="text-xs text-slate-400 mt-0.5">Rigolades, bonne bouffe et découverte de nouveaux spots.</div>
+            </div>
+          </button>
+
+          <button onclick="handleAnswer(1, 3)" class="w-full p-4 rounded-xl bg-darkCard hover:bg-darkCardHover border border-darkBorder hover:border-fuchsia-500 text-left transition-spring group flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-xs font-mono text-slate-300 group-hover:border-fuchsia-400 group-hover:text-white shrink-0 mt-0.5">C</span>
+            <div>
+              <div class="text-sm font-semibold text-white group-hover:text-fuchsia-300">Une sieste préliminaire de 2 heures, puis on décide.</div>
+              <div class="text-xs text-slate-400 mt-0.5">Priorité à la récupération d'énergie stratégique.</div>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- ================= STEP 2 ================= -->
+      <div id="step2" class="quiz-step hidden space-y-6">
+        <div class="space-y-2">
+          <span class="text-xs font-mono text-cyanNeon font-bold">SCÉNARIO 02</span>
+          <h3 class="font-display text-xl sm:text-2xl font-bold text-white">
+            Votre collègue de bureau vous a énervée aujourd'hui. Que doit faire Aldini ?
+          </h3>
+        </div>
+
+        <div class="space-y-3">
+          <button onclick="handleAnswer(2, 1)" class="w-full p-4 rounded-xl bg-darkCard hover:bg-darkCardHover border border-darkBorder hover:border-cyanNeon text-left transition-spring group flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-xs font-mono text-slate-300 group-hover:border-cyanNeon group-hover:text-white shrink-0 mt-0.5">A</span>
+            <div>
+              <div class="text-sm font-semibold text-white group-hover:text-cyan-300">Validation inconditionnelle : <em>« Elle a 100% tort, viens on mange un burger »</em>.</div>
+              <div class="text-xs text-slate-400 mt-0.5">Soutien sans réserve garanti par l'algorithme d'Aldini.</div>
+            </div>
+          </button>
+
+          <button onclick="handleAnswer(2, 2)" class="w-full p-4 rounded-xl bg-darkCard hover:bg-darkCardHover border border-darkBorder hover:border-cyanNeon text-left transition-spring group flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-xs font-mono text-slate-300 group-hover:border-cyanNeon group-hover:text-white shrink-0 mt-0.5">B</span>
+            <div>
+              <div class="text-sm font-semibold text-white group-hover:text-cyan-300">Écoute attentive, imitation humoristique de la collègue et fous rires.</div>
+              <div class="text-xs text-slate-400 mt-0.5">Désamorcer le stress par l'humour en moins de 3 minutes.</div>
+            </div>
+          </button>
+
+          <button onclick="handleAnswer(2, 3)" class="w-full p-4 rounded-xl bg-darkCard hover:bg-darkCardHover border border-darkBorder hover:border-cyanNeon text-left transition-spring group flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-xs font-mono text-slate-300 group-hover:border-cyanNeon group-hover:text-white shrink-0 mt-0.5">C</span>
+            <div>
+              <div class="text-sm font-semibold text-white group-hover:text-cyan-300">Préparation immédiate d'un thé et massage d'épaules.</div>
+              <div class="text-xs text-slate-400 mt-0.5">Prendre soin de vous physiquement et mentalement.</div>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- ================= STEP 3 ================= -->
+      <div id="step3" class="quiz-step hidden space-y-6">
+        <div class="space-y-2">
+          <span class="text-xs font-mono text-cyanNeon font-bold">SCÉNARIO 03</span>
+          <h3 class="font-display text-xl sm:text-2xl font-bold text-white">
+            Quelle est votre politique officielle sur le partage des desserts ?
+          </h3>
+        </div>
+
+        <div class="space-y-3">
+          <button onclick="handleAnswer(3, 1)" class="w-full p-4 rounded-xl bg-darkCard hover:bg-darkCardHover border border-darkBorder hover:border-emeraldNeon text-left transition-spring group flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-xs font-mono text-slate-300 group-hover:border-emeraldNeon group-hover:text-white shrink-0 mt-0.5">A</span>
+            <div>
+              <div class="text-sm font-semibold text-white group-hover:text-emerald-300">On commande deux desserts différents et on goûte dans l'assiette de l'autre.</div>
+              <div class="text-xs text-slate-400 mt-0.5">Le protocole de coopération diplomatique idéal.</div>
+            </div>
+          </button>
+
+          <button onclick="handleAnswer(3, 2)" class="w-full p-4 rounded-xl bg-darkCard hover:bg-darkCardHover border border-darkBorder hover:border-emeraldNeon text-left transition-spring group flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-xs font-mono text-slate-300 group-hover:border-emeraldNeon group-hover:text-white shrink-0 mt-0.5">B</span>
+            <div>
+              <div class="text-sm font-semibold text-white group-hover:text-emerald-300">Je dis que je n'en veux pas, mais je mange la moitié du sien.</div>
+              <div class="text-xs text-slate-400 mt-0.5">Aldini a été programmé pour accepter cette clause avec le sourire.</div>
+            </div>
+          </button>
+
+          <button onclick="handleAnswer(3, 3)" class="w-full p-4 rounded-xl bg-darkCard hover:bg-darkCardHover border border-darkBorder hover:border-emeraldNeon text-left transition-spring group flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-xs font-mono text-slate-300 group-hover:border-emeraldNeon group-hover:text-white shrink-0 mt-0.5">C</span>
+            <div>
+              <div class="text-sm font-semibold text-white group-hover:text-emerald-300">Chacun son dessert, mais la dernière bouchée s'échange amoureusement.</div>
+              <div class="text-xs text-slate-400 mt-0.5">Équilibre parfait entre gourmandise et tendresse.</div>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- ================= LOADING TELEMETRY SCREEN ================= -->
+      <div id="quizLoading" class="quiz-step hidden py-10 text-center space-y-6">
+        <div class="relative w-20 h-20 mx-auto">
+          <div class="w-full h-full rounded-full border-4 border-slate-800 border-t-fuchsiaNeon animate-spin"></div>
+          <div class="absolute inset-0 flex items-center justify-center font-mono font-bold text-xs text-fuchsia-300">
+            AI
+          </div>
+        </div>
+        <div class="space-y-2">
+          <div class="font-display font-bold text-xl text-white">Calcul télémétrique en cours...</div>
+          <p id="loadingLogText" class="font-mono text-xs text-cyanNeon">Analyse de l'indice d'humour...</p>
+        </div>
+      </div>
+
+      <!-- ================= RESULT SCREEN (US-6) ================= -->
+      <div id="quizResult" class="quiz-step hidden space-y-6 text-center">
+        
+        <!-- Score Celebration Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 text-xs font-mono font-bold">
+          <span class="w-2 h-2 rounded-full bg-emeraldNeon animate-pulse"></span>
+          <span>COMPATIBILITÉ CONFIRMÉE [OFFICIEL]</span>
+        </div>
+
+        <!-- Big Score Number -->
+        <div>
+          <div class="text-slate-400 text-xs font-mono uppercase tracking-widest mb-1">INDICE D'AFFINITÉ CALCULÉ</div>
+          <div class="font-display text-6xl sm:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emeraldNeon via-cyanNeon to-fuchsiaNeon tabular-nums">
+            98.4%
+          </div>
+          <p class="text-slate-300 text-sm sm:text-base max-w-md mx-auto mt-2 leading-relaxed">
+            Félicitations ! Vos réponses indiquent une compatibilité rare avec Aldini v2.4. Le conseil d'administration valide votre dossier sans réserve.
+          </p>
+        </div>
+
+        <!-- Conversion Direct Buttons -->
+        <div class="pt-4 space-y-3 max-w-md mx-auto">
+          
+          <!-- WhatsApp Primary Button -->
+          <a id="whatsappConversionBtn" 
+             href="https://wa.me/33600000000?text=Salut%20Aldini%20!%20J'ai%20pass%C3%A9%20ton%20test%20d'affinit%C3%A9%20sur%20ton%20site%20officiel%20et%20j'ai%20obtenu%2098.4%25.%20Le%20conseil%20a%20valid%C3%A9%20mon%20profil,%20on%20r%C3%A9serve%20quel%20resto%20pour%20le%20premier%20date%20%3F" 
+             target="_blank" 
+             onclick="playClickSound()" 
+             class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-emerald-600 via-teal-500 to-emerald-500 text-white font-bold text-sm sm:text-base tracking-wide shadow-glow-emerald hover:opacity-95 transition-spring flex items-center justify-center gap-3">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+            <span>Envoyer mon score sur WhatsApp →</span>
+          </a>
+
+          <!-- Instagram Secondary Button -->
+          <a id="instagramConversionBtn" 
+             href="https://instagram.com/aldini" 
+             target="_blank" 
+             onclick="playClickSound()" 
+             class="w-full py-3.5 px-6 rounded-2xl bg-darkCard hover:bg-darkCardHover border border-darkBorder hover:border-pink-500 text-slate-300 hover:text-white font-mono text-xs uppercase tracking-wider transition-spring flex items-center justify-center gap-2">
+            <svg class="w-4 h-4 fill-current text-pink-400" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+            <span>Glisser en DM sur Instagram</span>
+          </a>
+
+          <!-- Share Button (US-7) -->
+          <button onclick="copyShare()" class="w-full py-3 px-4 rounded-xl bg-slate-900 border border-slate-700 hover:border-slate-500 text-slate-400 hover:text-white text-xs font-mono flex items-center justify-center gap-2 transition-spring">
+            <span>🔗 Partager le profil à une copine</span>
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= LIGHTBOX MODAL PLEIN ÉCRAN POUR LES PHOTOS ================= -->
+  <div id="photoLightbox" class="fixed inset-0 z-50 bg-darkOled/95 backdrop-blur-xl hidden flex items-center justify-center p-4" onclick="closeLightbox()">
+    <div class="relative max-w-lg w-full glass-card rounded-3xl p-4 border border-darkBorder shadow-2xl" onclick="event.stopPropagation()">
+      
+      <!-- Close button -->
+      <button onclick="closeLightbox()" aria-label="Fermer la vue agrandie" class="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-slate-900/90 border border-slate-700 text-white flex items-center justify-center hover:bg-slate-800 transition-colors focus-visible:ring-2 focus-visible:ring-fuchsia-500 focus-visible:outline-none">
+        ✕
+      </button>
+
+      <!-- High-res Image (Contained without cropping) -->
+      <div class="w-full max-h-[72vh] rounded-2xl overflow-hidden bg-black/80 border border-darkBorder flex items-center justify-center">
+        <img id="lightboxImg" src="aldini photos/aldini_1.jpg" onerror="this.onerror=null; this.src='aldini_1.jpg';" alt="Zoom Aldini" class="max-h-[70vh] w-auto max-w-full object-contain">
+      </div>
+
+      <!-- Info Box -->
+      <div class="mt-4 flex items-center justify-between text-xs font-mono px-2">
+        <div>
+          <div id="lightboxTitle" class="font-bold text-white text-sm">Édition Signature</div>
+          <div class="text-slate-400">Photo certifiée · Millésime 1988 (38 ans)</div>
+        </div>
+        <button onclick="triggerLike()" aria-label="Liker la photo d'Aldini" class="px-3 py-1.5 rounded-full bg-fuchsia-950/80 border border-fuchsia-500/40 text-fuchsia-300 font-bold hover:bg-fuchsia-900 transition-spring flex items-center gap-1.5 focus-visible:ring-2 focus-visible:ring-fuchsia-500 focus-visible:outline-none">
+          <span>❤️ Liker</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= FOOTER OFFICIEL ================= -->
+  <footer class="py-12 px-4 sm:px-6 max-w-6xl mx-auto border-t border-darkBorder text-xs font-mono text-slate-500 relative z-10">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+      
+      <div class="flex items-center gap-3">
+        <span class="font-display font-black text-white text-base">ALDINI v2.4</span>
+        <span>·</span>
+        <span>Millésime 1988 (38 ans) · Conçu avec passion par son entourage</span>
+      </div>
+
+      <div class="flex items-center gap-6">
+        <a href="#galerie" class="hover:text-slate-300 transition-colors">Les Photos</a>
+        <a href="#specs" class="hover:text-slate-300 transition-colors">Specs</a>
+        <a href="#quiz" class="hover:text-slate-300 transition-colors">Quiz</a>
+        <a id="footerWa" href="https://wa.me/213557758057" target="_blank" class="hover:text-emeraldNeon transition-colors">WhatsApp</a>
+        <a id="footerIg" href="https://instagram.com/baccouche_abdelhafid" target="_blank" class="hover:text-pink-400 transition-colors">Instagram</a>
+      </div>
+
+    </div>
+    <div class="text-center sm:text-left mt-6 text-[11px] text-slate-600">
+      © 2026 Aldini Technologies Corp. Tous droits réservés. Aucune garantie de non-ronflement n'est fournie avec cette version.
+    </div>
+  </footer>
+
+  <!-- ================= TOAST NOTIFICATION ================= -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 pointer-events-none transition-all duration-300 max-w-sm">
+    <div class="glass-card px-4 py-3 rounded-2xl border border-fuchsia-500/40 shadow-glow-fuchsia flex items-center gap-3">
+      <span class="text-fuchsiaNeon text-lg">✨</span>
+      <div id="toastText" class="text-xs font-mono text-white">Action réussie !</div>
+    </div>
+  </div>
+
+  <!-- ================= LOGIQUE JAVASCRIPT ULTRA-ROBUSTE & VIVANTE ================= -->
+  <script>
+    // ==========================================
+    // 1. CONFIGURATION CENTRALISÉE DU MODÈLE ALDINI
+    // ==========================================
+    const ALDINI_CONFIG = {
+      name: "Aldini (Abdelhafid)",
+      birthYear: 1988,
+      age: 38,
+      whatsappNumber: "213557758057",   // Format international Ooredoo Algérie (+213 557 75 80 57)
+      instagramUsername: "baccouche_abdelhafid", // Pseudo réel Instagram (@baccouche_abdelhafid)
+      defaultMessage: "Salut Aldini ! J'ai passé ton test d'affinité sur ton site officiel et j'ai obtenu 98.4%. Le conseil d'administration a validé mon profil, on réserve quel resto pour le premier date ?",
+    };
+
+    // ==========================================
+    // 2. DONNÉES DES 3 PHOTOS OFFICIELLES
+    // ==========================================
+    const ALDINI_PHOTOS = [
+      {
+        id: 1,
+        title: "Édition Signature",
+        subtitle: "Look Hivernal & Charisme Naturel",
+        badge: "Look 01 · Best-Seller",
+        primarySrc: "aldini photos/aldini_1.jpg",
+        fallbackSrc: "aldini_1.jpg",
+        snippet: "Charisme : 99.8% · Style : Veste & Pull à motifs"
+      },
+      {
+        id: 2,
+        title: "Édition Vision 2.0",
+        subtitle: "Monture Chic & Ambiance Café",
+        badge: "Look 02 · Geek Chic",
+        primarySrc: "aldini photos/aldini_2.jpg",
+        fallbackSrc: "aldini_2.jpg",
+        snippet: "Écoute Active : 100% · Style : Lunettes Noires & T-Shirt Sable"
+      },
+      {
+        id: 3,
+        title: "Édition Minimaliste",
+        subtitle: "T-Shirt Slate & Chaîne Argentée",
+        badge: "Look 03 · Décontracté",
+        primarySrc: "aldini photos/aldini_3.jpg",
+        fallbackSrc: "aldini_3.jpg",
+        snippet: "Potentiel Chill : Maximum · Style : T-Shirt Slate & Chaîne"
+      }
+    ];
+
+    let currentPhotoId = 1;
+    let audioEnabled = true;
+
+    // ==========================================
+    // 3. MOTEUR AUDIO SYNTHÉTISÉ (WEB AUDIO API)
+    // ==========================================
+    let audioCtx = null;
+    function getAudioContext() {
+      if (!audioCtx) {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (AudioContextClass) {
+          audioCtx = new AudioContextClass();
+        }
+      }
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      return audioCtx;
+    }
+
+    function toggleAudio() {
+      audioEnabled = !audioEnabled;
+      const icon = document.getElementById("soundIcon");
+      const label = document.getElementById("soundLabel");
+      if (audioEnabled) {
+        icon.innerText = "🔊";
+        label.innerText = "Son : Activé";
+        playClickSound();
+        showToast("Effets sonores activés.");
+      } else {
+        icon.innerText = "🔇";
+        label.innerText = "Son : Coupé";
+        showToast("Effets sonores désactivés.");
+      }
+    }
+
+    function playClickSound() {
+      if (!audioEnabled) return;
+      try {
+        const ctx = getAudioContext();
+        if (!ctx) return;
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = "sine";
+        osc.frequency.setValueAtTime(800, ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(400, ctx.currentTime + 0.05);
+        gain.gain.setValueAtTime(0.08, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.05);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.05);
+      } catch (e) {}
+    }
+
+    function playSwitchSound() {
+      if (!audioEnabled) return;
+      try {
+        const ctx = getAudioContext();
+        if (!ctx) return;
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = "triangle";
+        osc.frequency.setValueAtTime(320, ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(780, ctx.currentTime + 0.12);
+        gain.gain.setValueAtTime(0.09, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.12);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.12);
+      } catch (e) {}
+    }
+
+    function playHeartSound() {
+      if (!audioEnabled) return;
+      try {
+        const ctx = getAudioContext();
+        if (!ctx) return;
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = "sine";
+        osc.frequency.setValueAtTime(520, ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(1040, ctx.currentTime + 0.15);
+        gain.gain.setValueAtTime(0.12, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.15);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.15);
+      } catch (e) {}
+    }
+
+    function playFanfareSound() {
+      if (!audioEnabled) return;
+      try {
+        const ctx = getAudioContext();
+        if (!ctx) return;
+        const notes = [523.25, 659.25, 783.99, 1046.50]; // Do, Mi, Sol, Do aigu (C5, E5, G5, C6)
+        notes.forEach((freq, idx) => {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = "sine";
+          osc.frequency.setValueAtTime(freq, ctx.currentTime + idx * 0.12);
+          gain.gain.setValueAtTime(0.14, ctx.currentTime + idx * 0.12);
+          gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + idx * 0.12 + 0.45);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(ctx.currentTime + idx * 0.12);
+          osc.stop(ctx.currentTime + idx * 0.12 + 0.45);
+        });
+      } catch (e) {}
+    }
+
+    // ==========================================
+    // 4. SÉLECTEUR DE PHOTOS INTERACTIF
+    // ==========================================
+    function selectPhotoLook(photoId) {
+      currentPhotoId = photoId;
+      playSwitchSound();
+
+      const photoObj = ALDINI_PHOTOS.find(p => p.id === photoId);
+      if (!photoObj) return;
+
+      const heroImg = document.getElementById("mainHeroPhoto");
+      if (heroImg) {
+        heroImg.style.opacity = '0';
+        setTimeout(() => {
+          heroImg.src = photoObj.primarySrc;
+          heroImg.onerror = function() {
+            this.onerror = null;
+            this.src = photoObj.fallbackSrc;
+          };
+          heroImg.style.opacity = '1';
+        }, 150);
+      }
+
+      // Mettre à jour les labels
+      const badgeLook = document.getElementById("activeBadgeLook");
+      const lookTitle = document.getElementById("activeLookTitle");
+      const lookSnippet = document.getElementById("lookSpecsSnippet");
+
+      if (badgeLook) badgeLook.innerText = photoObj.badge;
+      if (lookTitle) lookTitle.innerText = photoObj.title;
+      if (lookSnippet) lookSnippet.innerHTML = `<span class="text-cyanNeon">${photoObj.snippet}</span>`;
+
+      // Mettre à jour les bordures actives des boutons de look
+      for (let i = 1; i <= 3; i++) {
+        const btn = document.getElementById(`lookBtn${i}`);
+        if (btn) {
+          if (i === photoId) {
+            btn.className = "p-1.5 rounded-xl border-2 border-fuchsiaNeon bg-darkCard flex flex-col items-center gap-1.5 transition-spring text-left";
+          } else {
+            btn.className = "p-1.5 rounded-xl border border-darkBorder hover:border-slate-500 bg-darkCard flex flex-col items-center gap-1.5 transition-spring text-left opacity-75 hover:opacity-100";
+          }
+        }
+      }
+    }
+
+    // ==========================================
+    // 5. ANIMATION DE COEURS ET COMPTEUR DE LIKES
+    // ==========================================
+    let likes = 1482;
+    function triggerLike() {
+      likes++;
+      playHeartSound();
+      const likeSpan = document.getElementById("likeCount");
+      if (likeSpan) likeSpan.innerText = likes.toLocaleString();
+
+      const container = document.getElementById("heartParticles");
+      if (container) {
+        const heart = document.createElement("div");
+        heart.innerText = "❤️";
+        heart.className = "absolute text-2xl animate-float-heart";
+        heart.style.left = `${30 + Math.random() * 50}%`;
+        heart.style.bottom = "20%";
+        container.appendChild(heart);
+        setTimeout(() => heart.remove(), 1000);
+      }
+      showToast("Like envoyé à Aldini ! 🔥");
+    }
+
+    // ==========================================
+    // 6. LIGHTBOX ZOOM PLEIN ÉCRAN
+    // ==========================================
+    function openLightbox() {
+      playClickSound();
+      const photoObj = ALDINI_PHOTOS.find(p => p.id === currentPhotoId) || ALDINI_PHOTOS[0];
+      const modal = document.getElementById("photoLightbox");
+      const img = document.getElementById("lightboxImg");
+      const title = document.getElementById("lightboxTitle");
+
+      if (img) {
+        img.src = photoObj.primarySrc;
+        img.onerror = function() {
+          this.onerror = null;
+          this.src = photoObj.fallbackSrc;
+        };
+      }
+      if (title) title.innerText = `${photoObj.title} — ${photoObj.subtitle}`;
+      if (modal) modal.classList.remove("hidden");
+    }
+
+    function closeLightbox() {
+      playClickSound();
+      const modal = document.getElementById("photoLightbox");
+      if (modal) modal.classList.add("hidden");
+    }
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeLightbox();
+    });
+
+    // ==========================================
+    // 7. MOTEUR DU QUIZ D'AFFINITÉ (3 ÉTAPES)
+    // ==========================================
+    let userAnswers = {};
+
+    function handleAnswer(step, choice) {
+      playClickSound();
+      userAnswers[step] = choice;
+
+      if (step === 1) {
+        document.getElementById("step1").classList.add("hidden");
+        document.getElementById("step2").classList.remove("hidden");
+        document.getElementById("quizStepLabel").innerText = "QUESTION 2 SUR 3";
+        document.getElementById("quizStepPercent").innerText = "66%";
+        document.getElementById("quizProgressBar").style.width = "66%";
+      } else if (step === 2) {
+        document.getElementById("step2").classList.add("hidden");
+        document.getElementById("step3").classList.remove("hidden");
+        document.getElementById("quizStepLabel").innerText = "QUESTION 3 SUR 3";
+        document.getElementById("quizStepPercent").innerText = "90%";
+        document.getElementById("quizProgressBar").style.width = "90%";
+      } else if (step === 3) {
+        document.getElementById("step3").classList.add("hidden");
+        document.getElementById("quizLoading").classList.remove("hidden");
+        document.getElementById("quizStepLabel").innerText = "ANALYSE TÉLÉMÉTRIQUE";
+        document.getElementById("quizStepPercent").innerText = "100%";
+        document.getElementById("quizProgressBar").style.width = "100%";
+
+        const logPhrases = [
+          "Calcul de la tolérance aux siestes dominicales...",
+          "Vérification du protocole anti-ghosting...",
+          "Validation de la compatibilité gastronomique...",
+          "Synchronisation du taux d'affinité..."
+        ];
+
+        let logIdx = 0;
+        const interval = setInterval(() => {
+          logIdx++;
+          const logText = document.getElementById("loadingLogText");
+          if (logText && logPhrases[logIdx]) {
+            logText.innerText = logPhrases[logIdx];
+          }
+        }, 500);
+
+        setTimeout(() => {
+          clearInterval(interval);
+          document.getElementById("quizLoading").classList.add("hidden");
+          document.getElementById("quizResult").classList.remove("hidden");
+          playFanfareSound();
+          fireConfetti();
+        }, 2200);
+      }
+    }
+
+    // ==========================================
+    // 8. FEU D'ARTIFICE DE CONFETTIS (CANVAS)
+    // ==========================================
+    function fireConfetti() {
+      const canvas = document.getElementById("confettiCanvas");
+      if (!canvas) return;
+      const ctx = canvas.getContext("2d");
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      const particles = [];
+      const colors = ["#d946ef", "#ec4899", "#06b6d4", "#10b981", "#f59e0b", "#ffffff"];
+
+      for (let i = 0; i < 120; i++) {
+        particles.push({
+          x: canvas.width / 2,
+          y: canvas.height / 2 + 100,
+          vx: (Math.random() - 0.5) * 18,
+          vy: (Math.random() - 0.8) * 16,
+          size: Math.random() * 8 + 4,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          rotation: Math.random() * 360,
+          rotationSpeed: (Math.random() - 0.5) * 10,
+          opacity: 1
+        });
+      }
+
+      let frame = 0;
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        let alive = false;
+        particles.forEach(p => {
+          p.x += p.vx;
+          p.y += p.vy;
+          p.vy += 0.35; // gravité
+          p.vx *= 0.98;
+          p.rotation += p.rotationSpeed;
+          p.opacity -= 0.009;
+
+          if (p.opacity > 0) {
+            alive = true;
+            ctx.save();
+            ctx.globalAlpha = Math.max(0, p.opacity);
+            ctx.translate(p.x, p.y);
+            ctx.rotate((p.rotation * Math.PI) / 180);
+            ctx.fillStyle = p.color;
+            ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.6);
+            ctx.restore();
+          }
+        });
+
+        if (alive && frame < 180) {
+          frame++;
+          requestAnimationFrame(animate);
+        } else {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+      }
+      animate();
+    }
+
+    // ==========================================
+    // 9. CONFIGURATION DYNAMIQUE DES LIENS WHATSAPP & INSTAGRAM
+    // ==========================================
+    (function initContactLinks() {
+      const waEncoded = encodeURIComponent(ALDINI_CONFIG.defaultMessage);
+      const waUrl = `https://wa.me/${ALDINI_CONFIG.whatsappNumber}?text=${waEncoded}`;
+      const igUrl = `https://instagram.com/${ALDINI_CONFIG.instagramUsername}`;
+
+      const waBtn = document.getElementById("whatsappConversionBtn");
+      const igBtn = document.getElementById("instagramConversionBtn");
+      const footerWa = document.getElementById("footerWa");
+      const footerIg = document.getElementById("footerIg");
+
+      if (waBtn) waBtn.href = waUrl;
+      if (igBtn) igBtn.href = igUrl;
+      if (footerWa) footerWa.href = waUrl;
+      if (footerIg) footerIg.href = igUrl;
+    })();
+
+    // ==========================================
+    // 10. PARTAGE & TOAST (AVEC WEB SHARE API SUR MOBILE)
+    // ==========================================
+    function copyShare() {
+      playClickSound();
+      const shareData = {
+        title: "Aldini v2.4 — Édition Keynote Officielle",
+        text: "Regarde ce profil certifié zéro ghosting, sieste 12h et millésime 1988 (38 ans) !",
+        url: window.location.href
+      };
+
+      if (navigator.share && /mobile|android|iphone|ipad/i.test(navigator.userAgent)) {
+        navigator.share(shareData).catch(() => {
+          fallbackClipboardCopy();
+        });
+      } else {
+        fallbackClipboardCopy();
+      }
+    }
+
+    function fallbackClipboardCopy() {
+      const url = window.location.href;
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(url).then(() => {
+          showToast("Lien du profil copié dans le presse-papier !");
+        }).catch(() => {
+          showToast("Lien : " + url);
+        });
+      } else {
+        showToast("Lien : " + url);
+      }
+    }
+
+    function showToast(text) {
+      const toast = document.getElementById("toast");
+      const toastText = document.getElementById("toastText");
+      if (!toast || !toastText) return;
+      toastText.innerText = text;
+      toast.classList.remove("translate-y-24", "opacity-0", "pointer-events-none");
+      toast.classList.add("translate-y-0", "opacity-100");
+      setTimeout(() => {
+        toast.classList.add("translate-y-24", "opacity-0", "pointer-events-none");
+        toast.classList.remove("translate-y-0", "opacity-100");
+      }, 3200);
+    }
+
+    // ==========================================
+    // 11. DÉVERROUILLAGE AUDIOCONTEXT MOBILE (SAFARI / CHROME)
+    // ==========================================
+    window.addEventListener("pointerdown", () => {
+      try {
+        const ctx = getAudioContext();
+        if (ctx && ctx.state === 'suspended') {
+          ctx.resume();
+        }
+      } catch (e) {}
+    }, { once: true });
+  </script>
+
+</body>
+</html>
